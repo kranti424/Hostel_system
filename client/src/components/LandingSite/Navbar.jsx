@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
 
@@ -7,7 +9,8 @@ function Navbar() {
   return (
     <nav className="flex align-center justify-between p-10 text-white md:px-20">
       <Link to="/" className="flex z-10 md:py-3 font-bold text-xl">
-        Home
+        
+        <FontAwesomeIcon icon={faHouse} size="lg" />
       </Link>
       <div
         className="flex gap-10 md:flex"

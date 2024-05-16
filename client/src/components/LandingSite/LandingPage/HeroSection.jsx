@@ -3,13 +3,14 @@ import "./Hero.css";
 
 function HeroSection() {
   return (
+    
     <main className="flex flex-col lg:flex-row-reverse justify-center align-center  text-white text-center">
           <img
             className="h-1/2 w-1/3 ml-20 mt-20 "
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/VJTI_College_Quadrangle.jpg/1200px-VJTI_College_Quadrangle.jpg"
           ></img>
       <div className="md:pt-[8%]">
-      <h1 className="cormorant-garamond-semibold">
+        <h1 className="font-bold text-6xl" id="vjti">
           VJTI
         </h1>
         <br />
