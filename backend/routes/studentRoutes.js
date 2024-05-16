@@ -3,10 +3,6 @@ const router = express.Router();
 const { check } = require('express-validator');
 const { registerStudent, getStudent, getAllStudents, updateStudent, deleteStudent, csvStudent } = require('../controllers/studentController');
 
-
-// @route  POST api/student/register-student
-// @desc   Register student
-// @access Public
 router.post('/register-student', [
     check('name', 'Name is required').not().isEmpty(),
     check('cms_id', 'CMS ID of at least 6 digit is required').isLength(6),
@@ -28,16 +24,11 @@ router.post('/get-student', [
     check('token', 'You donot have a valid token').notEmpty()
 ], getStudent);
 
-// @route  POST api/student/get-all-students
-// @access Public
 router.post('/get-all-students',[
     check('hostel', 'Hostel is required').not().isEmpty()
 ],
  getAllStudents);
 
-// @route  POST api/student/update-student
-// @desc   Update student
-// @access Public
 router.post('/update-student', [
     check('cms_id', 'CMS ID is required').not().isEmpty(),
     check('room_no', 'Room number is required').not().isEmpty(),
@@ -53,20 +44,13 @@ router.post('/update-student', [
     check('hostel', 'Hostel is required').not().isEmpty()
 ], updateStudent);
 
-// @route  POST api/student/delete-student
-// @desc   Delete student
-// @access Public
 router.delete('/delete-student', [
     check('id', 'Enter a valid ID').not().isEmpty(),
 ], deleteStudent);
 
-// @route  POST api/student/csv
-// @desc   Get CSV of students
-// @access Public
 router.post('/csv', [
     check('hostel', 'Hostel is required').not().isEmpty()
 ], csvStudent);
 
 
 module.exports = router;
-

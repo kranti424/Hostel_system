@@ -13,7 +13,7 @@ const registerStudent = async (req, res) => {
         return res.status(400).json({success, errors: errors.array() });
     }
 
-    const { name, cms_id, room_no, batch, dept, course, email, father_name, contact, address, dob, hostel, password } = req.body;
+    const { name, cms_id, room_no, batch, dept, course, email, father_name, contact, address, dob,  hostel, password } = req.body;
     try {
         let student = await Student.findOne({ cms_id });
 
@@ -187,7 +187,6 @@ const csvStudent = async (req, res) => {
         // console.log(req.body);
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            // console.log(errors);
             return res.status(400).json({success, errors: errors.array() });
         }
 
@@ -200,7 +199,6 @@ const csvStudent = async (req, res) => {
         students.forEach(student => {
             student.hostel_name = shostel.name;
             student.d_o_b = new Date(student.dob).toDateString().slice(4);
-            student.cnic_no = student.cnic.slice(0, 5) + '-' + student.cnic.slice(5, 12) + '-' + student.cnic.slice(12);
             student.contact_no = "+92 "+student.contact.slice(1);
         });
 

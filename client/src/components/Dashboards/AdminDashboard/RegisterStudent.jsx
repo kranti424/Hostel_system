@@ -101,7 +101,6 @@ function RegisterStudent() {
   const [contact, setContact] = useState();
   const [address, setAddress] = useState();
   const [dob, setDob] = useState();
-  const [cnic, setCnic] = useState();
   const [password, setPassword] = useState();
 
   const [loading, setLoading] = useState(false);
@@ -127,7 +126,7 @@ function RegisterStudent() {
             <Input
               field={{
                 name: "Registration ID",
-                placeholder: "Student Registration ID",
+                placeholder: "Student Reg no.",
                 type: "number",
                 req: true,
                 value: cms,
@@ -144,7 +143,6 @@ function RegisterStudent() {
                 onChange: (e) => setDob(e.target.value),
               }}
             />
-            
           </div>
           <div className="flex gap-5 w-full flex-wrap justify-center">
             <Input
@@ -199,7 +197,7 @@ function RegisterStudent() {
               field={{
                 name: "room",
                 placeholder: "Student Room",
-                type: "text",
+                type: "number",
                 req: true,
                 value: room_no,
                 onChange: (e) => setRoomNo(e.target.value),
